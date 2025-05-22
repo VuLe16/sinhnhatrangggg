@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chúc mừng sinh nhật em iu 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      font-family: 'Quicksand', sans-serif;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 38px;
+      color: #fff;
+      margin: 0;
+    }
+
+    header h2 {
+      font-size: 20px;
+      color: #fff;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    .container {
+      width: 100%;
+      height: calc(100vh - 140px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .doors-wrapper {
+      width: 800px; /* tăng khoảng cách giữa hai cửa */
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .door {
+      width: 200px;
+      height: 400px;
+      background-color: #fff;
+      border: 2px solid #ccc;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 1s ease-in-out, opacity 1s ease;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 24px;
+      color: #555;
+      z-index: 2;
+    }
+
+    .door.left {
+      transform-origin: left;
+    }
+
+    .door.right {
+      transform-origin: right;
+    }
+
+    .door.open-left {
+      transform: rotateY(-120deg);
+    }
+
+    .door.open-right {
+      transform: rotateY(120deg);
+    }
+
+    .door.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .message {
+      position: absolute;
+      max-width: 600px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      font-size: 18px;
+      line-height: 1.6;
+      display: none;
+      text-align: justify;
+    }
+
+    .message.show {
+      display: block;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .message1 {
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .message2 {
+      bottom: 8%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>To: Tím aka Nguyễn Huy Quỳnh Trang</h1>
+    <h2>mở cửa đuy</h2>
+  </header>
+
+  <div class="container">
+    <div class="doors-wrapper">
+      <div class="door left" id="door1">Cửa 1</div>
+      <div class="door right" id="door2">Cửa 2</div>
+    </div>
+
+    <div class="message message1" id="message1">
+      Chúc mừng sinh nhật em iu nhéeeeeee 🎂💗
+    </div>
+
+    <div class="message message2" id="message2">
+      Hmmm nói như nào đây ta? Chúc xinh gái hơn thì cũng không có tác dụng lắm vì một người hoàn hảo về nhan sắc trong mắt anh thì đâu cần thêm nữa kkkkk. Bây giờ thì chỉ có chúc về tinh thần ha, mặc dù trước đây anh cũng ít nhiều support em về tinh thần roài nhưng mà việc tinh thần không tốt là cái không thể tránh khỏi nên là mong em đừng nghĩ nhìu ha, những thứ không đáng nghĩ đến thì bỏ ngoài tai còn những thứ ngay trước mắt thì có thể tâm sự với anh nè. Năm sau bắt buộc phải thi đỗ nguyện vọng 1 nên là học thật giỏi nhaaa. Cuối cùng chắc chỉ mong em yêu anh nhìu hơn thui... Mặc dù nói như này hơi ích kỉ nhưng thật sự anh rất nhớ cảm giác được em ôm thật lauuuu, skinship thật lauuuu, bên nhau thật lâu nữaaa. Thế thui ha tuổi mới vui vẻ ha, sống tích cực lên nè, mạnh khỏe nè, thật hạnh phúcc 💖
+    </div>
+  </div>
+
+  <script>
+    const door1 = document.getElementById('door1');
+    const door2 = document.getElementById('door2');
+    const message1 = document.getElementById('message1');
+    const message2 = document.getElementById('message2');
+
+    let opened1 = false;
+    let opened2 = false;
+
+    door1.addEventListener('click', () => {
+      if (!opened1) {
+        door1.classList.add('open-left');
+        setTimeout(() => {
+          door1.classList.add('hide');
+          message1.classList.add('show');
+        }, 1000);
+        opened1 = true;
+      }
+    });
+
+    door2.addEventListener('click', () => {
+      if (!opened2) {
+        door2.classList.add('open-right');
+        setTimeout(() => {
+          door2.classList.add('hide');
+          message2.classList.add('show');
+        }, 1000);
+        opened2 = true;
+      }
+    });
+  </script>
+</body>
+</html>
